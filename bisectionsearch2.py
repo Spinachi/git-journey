@@ -1,0 +1,20 @@
+#bisection sort works on nnumber when x>1 time complextity of O log 2  base n trying to work on the it when x < 1
+cube = 0.5
+epsilon = 0.01
+number_guess = 0
+low = 0
+high = 1 
+guess = abs((low + high)/2.0)
+
+while(abs(guess**3-abs(cube))>= epsilon):
+    if guess**3 < abs(cube):
+        low = guess     
+    else:
+        high = guess
+    guess = (high+low)/2.0        
+    number_guess+=1
+if cube < 0:
+    guess = -guess    
+
+print('number_guess',number_guess)
+print(guess, "is close to the cube", cube)
